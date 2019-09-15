@@ -1,5 +1,8 @@
 import React from "react";
+
 import MenuItem from "../menu-item/menu-item.component";
+
+import DIRECTORY_DATA from '../../data/directory/directory.data.js';
 
 import "./directory.styles.scss";
 
@@ -8,14 +11,8 @@ class Directory extends React.Component {
     super();
 
     this.state = {
-      sectionData: []
+      sectionData: DIRECTORY_DATA
     };
-  }
-  
-  componentDidMount() {
-    fetch("https://api.myjson.com/bins/znmrl")
-      .then(response => response.json())
-      .then(sections => this.setState({ sectionData: sections }));
   }
 
   render() {
